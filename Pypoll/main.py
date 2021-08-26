@@ -1,7 +1,7 @@
 import csv
 import os
 
-path_election = os.path.join(r'election_data.csv')
+path_election = os.path.join(r'Resources/election_data.csv')
 with open(path_election, 'r') as csvfile:
 
     csv_reader = csv.reader(csvfile, delimiter=',')
@@ -61,3 +61,20 @@ print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
 
+#write in a text
+
+with open('Analysis/Analysis.txt', 'w') as a:
+    a.writelines("Election Results\n"+"-------------------------")
+    a.writelines('\n')
+    a.writelines(f"Total Votes: {total_votes}")
+    a.writelines('\n')
+    a.writelines("-------------------------")
+    a.writelines('\n')
+    a.writelines(f"Khan: {khan_vote_rate} ({khan_vote})\nCorrey: {correy_vote_rate} ({correy_vote})\nLi: {li_vote_rate} ({li_vote})\nO'Tooley: {tooley_vote_rate} ({tooley_vote})")
+    a.writelines('\n')
+    a.writelines("-------------------------")
+    a.writelines('\n')
+    a.writelines(f"Winner: {winner}")
+    a.writelines('\n')
+    a.writelines("-------------------------")
+    a.writelines('\n')

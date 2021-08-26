@@ -3,7 +3,7 @@ import os
 #set path
 #import Financial as Financial
 
-path_pybank = os.path.join(r'budget_data.csv')
+path_pybank = os.path.join(r'Resources/budget_data.csv')
 
 
 # open csv file
@@ -82,6 +82,24 @@ with open(path_pybank, 'r') as pybank:
     print(f'Greatest Increase in Profits: {max_increase_month} $({max_increase})')
     print(f'Greatest Decrease in Profits: {max_decrease_month} $({max_decrease})')
 
+#write in a text
+
+with open('Analysis/Analysis.txt', 'w') as a:
+
+    a.writelines("Financial Analysis")
+    a.writelines('\n')
+    a.writelines('----------------------------')
+    a.writelines('\n')
+    a.writelines(f'Total Months: {total_months}')
+    a.writelines('\n')
+    a.writelines(f'Total: $ {round(net_total)}')
+    a.writelines('\n')
+    a.writelines(f'Average Change: ${round(average_change,2)}')
+    a.writelines('\n')
+    a.writelines(f'Greatest Increase in Profits: {max_increase_month} $({max_increase})')
+    a.writelines('\n')
+    a.writelines(f'Greatest Decrease in Profits: {max_decrease_month} $({max_decrease})')
+    a.writelines('\n')
 
 
 
